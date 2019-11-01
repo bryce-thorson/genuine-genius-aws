@@ -215,7 +215,13 @@
                     <label for="quantity">Quantity: </label>
                     <div class="form-inline">
                       <input style="max-width: 50px;" type="text" maxlength="3" value="1" name="qty" class="form-control mr-2" id="quantity"> 
-                      <a href="#" class="btn btn-primary" title="quantity">Add To Cart</a>
+                      <router-link 
+                        href="#" 
+                        class="btn btn-primary" 
+                        title="quantity"
+                        to="/Cart"
+                        >Add To Cart
+                      </router-link>
                     </div>
                     <p class="disclaimer">{{exam.disclaimer}}<a href="">{{exam.location}}</a> </p>
                   </div>

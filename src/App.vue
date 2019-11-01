@@ -1,7 +1,14 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view />
+    <transition
+      name="router-anim"
+      mode="out-in"
+      enter-active-class="animated fadeIn" 
+      leave-active-class="animated fadeOut"
+    >
+      <router-view />
+    </transition>
   </div>
 </template>
 

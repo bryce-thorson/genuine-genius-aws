@@ -1,9 +1,9 @@
 <template>
   <div>
     <nav class="navbar">
-      <a class="navbar-brand" href="#" @click.prevent="helper">
+      <router-link to="/" class="navbar-brand" href="#" @click.prevent="helper">
         <img src="../../src/assets/awsLogo.png" class="logo" alt="">
-      </a>
+      </router-link>
       <ul>
         <li v-for="item in navigation" :key="item.id">
           <div class="dropdown">
