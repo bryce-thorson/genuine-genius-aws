@@ -1,0 +1,27 @@
+$aws--blue: #232F3E;
+$green--primary: #36C2B4;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+.btn.btn-primary {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: $green--primary;
+  border-color: $green--primary;
+}
+
+.list-group-item.active {
+  background-color: #E8E8E8;
+  border-color: #E8E8E8;
+  font-weight: bold;
+}
