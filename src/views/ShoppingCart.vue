@@ -45,8 +45,8 @@
       </div>
     </div>
     <div class="nav-buttons d-flex justify-content-between mt-4">
-      <button class="btn btn-primary">Back to Shopping</button>
-      <button class="btn btn-primary">Continue</button>
+      <router-link to="/" class="btn btn-primary">Back to Shopping</router-link>
+      <router-link to="/Purchasing" class="btn btn-primary">Continue</router-link>
     </div>
   </div>
 </template>
