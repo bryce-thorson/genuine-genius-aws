@@ -6,6 +6,7 @@ import Purchasing from '../views/Purchasing.vue'
 import SignIn from '../views/SignIn.vue'
 import CreateAccount from '../views/CreateAccount.vue'
 import CreateCustomerAccount from '../views/CreateCustomerAccount.vue'
+import PaymentMethod from '../views/PaymentMethod.vue'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,12 @@ const routes = [
     path: '/CreateCustomerAccount',
     name: 'CreateCustomerAccount',
     component: CreateCustomerAccount
-  }
+  },
+  {
+    path: '/PaymentMethod',
+    name: 'PaymentMethod',
+    component: PaymentMethod
+  },
 ]
 
 const router = new VueRouter({

@@ -2,64 +2,23 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
-        <!-- <div class="list-group" id="list-tab" role="tablist">
-          <a 
-            class="list-group-item list-group-item-action active" 
-            id="list-home-list" 
-            data-toggle="list" 
-            href="#list-home" 
-            role="tab" 
-            aria-controls="home"
-            >AWS Certification Vouchers Home
-          </a>
-          <a 
-            class="list-group-item list-group-item-action" 
-            id="list-profile-list" 
-            data-toggle="list"
-            aria-controls="profile"
-            aria-expanded="true"
-            href="#list-profile" 
-            role="tab"
-            >Foundational
-            </a>
-          <a 
-            class="list-group-item list-group-item-action" 
-            id="list-messages-list" 
-            data-toggle="list" 
-            href="#list-messages" 
-            role="tab"
-            aria-controls="messages"
-            >Associate
-            </a>
-          <a 
-            class="list-group-item list-group-item-action" 
-            id="list-settings-list" 
-            data-toggle="list" 
-            href="#list-settings" 
-            role="tab"
-            aria-controls="settings"
-            >Professional
-             or Specialty</a>
-          <a 
-            class="list-group-item list-group-item-action" 
-            id="list-settings-list" 
-            data-toggle="list" 
-            href="#list-settings" 
-            role="tab"
-            aria-controls="settings"
-            >Shopping
-             Cart</a>
-          <a 
-            class="list-group-item list-group-item-action" 
-            id="list-settings-list" 
-            data-toggle="list" 
-            href="#list-settings" 
-            role="tab"
-            aria-controls="settings"
-            >Help
-            </a>
-        </div> -->
-        <div class="just-padding">
+        <div class="list-group" id="list-tab" role="tablist">
+          <div v-for="item in examList" :key="item">
+              <a
+                data-toggle="list"
+                class="list-group-item"
+                :aria-controls="item.controls"
+                :href="item.src" 
+                role="tab" 
+                >
+                <span>
+                {{item.title}}
+                </span>
+              </a>
+              
+        </div>
+        </div>
+        <!-- <div class="just-padding">
           <div class="list-group list-group-root well">
             <div v-for="item in examList" :key="item">
               <a
@@ -110,7 +69,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-lg-8">
         <div class="tab-content" id="nav-tabContent">
@@ -206,7 +165,7 @@
                 certification: <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/">AWS Certified Cloud Practitioner</a>.
               </p>
               <div class="exam-area" v-for="exam in examList[1].exams" :key="exam.id">
-                <div class="exam" :class="{invisible:!exam.visible}">
+                <div class="exam">
                   <h4 class="exam-title">
                     AWS Certification:<br>{{exam.title}}
                   </h4>
@@ -229,11 +188,7 @@
               </div>
             </div>
           </div>
-          <div 
-            class="tab-pane fade" 
-            id="examAssociate" 
-            role="tabpanel" 
-            aria-labelledby="list-messages-list"
+          <div class="tab-pane fade" id="examAssociate" role="tabpanel" aria-labelledby="list-associate-list"
             >
             <div class="content">
               <h1>AWS Associate Certification Exams</h1>
@@ -247,7 +202,7 @@
                 , and <a href="https://aws.amazon.com/certification/certified-developer-associate/" target="_blank">AWS Certified Developer</a>.
               </p>
               <div class="exam-area" v-for="exam in examList[2].exams" :key="exam.id">
-                <div class="exam" :class="{invisible:!exam.visible}">
+                <div class="exam">
                   <h4 class="exam-title">
                     AWS Certification:<br>{{exam.title}}
                   </h4>
@@ -264,18 +219,7 @@
               </div>
             </div>
           </div>
-          <div 
-            class="tab-pane fade" 
-            id="list-
-            settings" role="t
-            abpanel" aria-labelledby="list-
-            settings-list">...</div>
-            <div 
-            class="tab-pane fade" 
-            id="examProfessional" 
-            role="tabpanel" 
-            aria-labelledby="list-professional-list"
-            >
+          <div class="tab-pane fade" id="examProfessional" role="tabpanel" aria-labelledby="list-professional-list">
             <div class="content">
               <h1>AWS Professional Certification Exam</h1>
               <p class="mb-5">
@@ -303,7 +247,7 @@
                 </p>
 
               <div class="exam-area" v-for="exam in examList[3].exams" :key="exam">
-                <div class="exam" :class="{invisible:!exam.visible}">
+                <div class="exam">
                   <h4 class="exam-title">
                     AWS Certification:<br>{{exam.title}}
                   </h4>
@@ -348,20 +292,20 @@ export default {
                     operations roles, plus specialty certifications to validate advanced skills in specific technical areas.
                     Learn more about our exams by viewing our`,
             links: [
-              {
-                text: 'learning paths',
-                url: 'https://aws.amazon.com/training/learning-paths/',
-                id: 1
-              },
-              {
-                text: 'exam preparation resources',
-                url: 'https://aws.amazon.com/certification/certification-prep/',
-                id: 2
-              }
-            ]
-              }
-            },
-            {
+                {
+                  text: 'learning paths',
+                  url: 'https://aws.amazon.com/training/learning-paths/',
+                  id: 1
+                },
+                {
+                  text: 'exam preparation resources',
+                  url: 'https://aws.amazon.com/certification/certification-prep/',
+                  id: 2
+                }
+              ]
+            }
+        },
+        {
           title: 'Foundational',
           collapse: true,
           src: '#examFoundational',
